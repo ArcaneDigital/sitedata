@@ -1,12 +1,21 @@
 {
   "name": "sitedata",
-  "version": "1.1.0",
-  "description": "",
+  "version": "1.1.3",
+  "description": "Node wrapper for the SiteData.io API",
   "main": "index.js",
+  "repository": "https://github.com/ArcaneDigital/sitedata",
+  "keywords": ["sitedata", "metrics", "website"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcanedigital/sitedata.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Jay Goodfellow",
+    "email": "j.goodfellow@arcane.ws"
+  },
   "license": "ISC",
   "dependencies": {
     "got": "8.3.0"
