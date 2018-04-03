@@ -33,3 +33,10 @@ const sitedata = new SiteData({ token: "YOUR_API_TOKEN" })
   }
 })()
 ```
+
+### Tests
+To run the test suite, first install the dependencies, then run `npm test`:
+```
+$ npm install
+$ npm test
+```
