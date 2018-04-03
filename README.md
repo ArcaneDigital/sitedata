@@ -1,6 +1,6 @@
 # sitedata
 
-Node wrapper for the [SiteData.io API](https://sitedata.io/docs/).
+Node wrapper for the [SiteData.io API](https://api.sitedata.io/docs/).
 
 ### Promise Example
 
