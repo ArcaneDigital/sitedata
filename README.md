@@ -1,6 +1,6 @@
 # sitedata
 
-Node wrapper for the [SiteData.io API](https://sitedata.io/docs/).
+Node wrapper for the [SiteData.io API](https://api.sitedata.io/docs/).
 
 ### Promise Example
 
@@ -32,4 +32,11 @@ const sitedata = new SiteData({ token: "YOUR_API_TOKEN" })
     console.log(e)
   }
 })()
+```
+
+### Tests
+To run the test suite, first install the dependencies, then run `npm test`:
+```
+$ npm install
+$ npm test
 ```
