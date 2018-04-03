@@ -2,12 +2,10 @@
   "name": "sitedata",
   "version": "1.3.3",
   "description": "Node wrapper for the SiteData.io API",
-
   "main": "dist.js",
   "files": [
     "dist.js"
   ],
-
   "repository": {
     "type": "git",
     "url": "https://github.com/arcanedigital/sitedata.git"
@@ -18,11 +16,9 @@
     "website"
   ],
   "scripts": {
-
     "build": "rollup -c",
     "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-
+    "test": "mocha"
   },
   "author": {
     "name": "Jay Goodfellow",
@@ -34,20 +30,20 @@
     "babel-polyfill": "6.26.0"
   },
   "devDependencies": {
-
     "babel-core": "6.26.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-es2015-rollup": "3.0.0",
     "babel-preset-stage-0": "6.24.1",
+    "mocha": "5.0.5",
     "rollup": "0.57.1",
     "rollup-plugin-babel": "3.0.3",
-    "rollup-plugin-commonjs": "9.1.0"
+    "rollup-plugin-commonjs": "9.1.0",
+    "should": "13.2.1"
   },
   "babel": {
     "presets": [
       "stage-1",
       "es2015-rollup"
     ]
-
   }
 }
