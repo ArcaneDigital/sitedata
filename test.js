@@ -25,43 +25,35 @@ describe('Module options', () => {
 
 describe('Metrics', () => {
     const sd = new module({ token: TEST_TOKEN });
+    let result;
 
-    describe("Index", async () => {
-        let result;
+    beforeEach(async () =>  result = await sd.metric.index({ url: TEST_URL }));
+    afterEach(async () => requestSpy.resetHistory());
 
-        beforeEach(async () =>{
-            result = await sd.metric.index({ url: TEST_URL });
-        });
+    it('should make at least one request', () => {
+        should(requestSpy.called).be.true();
+    });
 
-        afterEach(async () =>{
-            requestSpy.resetHistory();
-        });
+    it('should get called with the correct params', () => {
+        const {
+            args: [[
+                urlParam
+            ]]
+        } = requestSpy;
+        const [
+            uri,
+            queryParams
+        ] = urlParam.split('?');
+        const {
+            match,
+            page,
+            token,
+            url
+        } = qs.parse(queryParams);
 
-        it("should make at least one request", () => {
-            should(requestSpy.called).be.true();
-        });
-
-        it("should get called with the correct params", () => {
-            const {
-                args: [[
-                    urlParam
-                ]]
-            } = requestSpy;
-            const [
-                uri,
-                queryParams
-            ] = urlParam.split('?');
-            const {
-                match,
-                page,
-                token,
-                url
-            } = qs.parse(queryParams);
-
-            should.equal(token, TEST_TOKEN);
-            should.equal(url, TEST_URL);
-            should.equal(page, '1');
-            should.equal(match, 'contains');
-        });
+        should.equal(token, TEST_TOKEN);
+        should.equal(url, TEST_URL);
+        should.equal(page, '1');
+        should.equal(match, 'contains');
     });
 });
